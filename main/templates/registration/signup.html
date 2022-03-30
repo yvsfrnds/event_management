@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="container my-4">
+	<!-- Featured Products -->
+	<h3 class="my-4 border-bottom pb-1">SignUp</h3>
+	<table class="table table-bordered">
+		<form method="post">
+			{% csrf_token %}
+			{{form.as_table}}
+			<tr>
+				<td colspan="2">
+					<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+					<div class="input-group mb-3">
+					<div class="g-recaptcha" data-sitekey="6LfArBgfAAAAABreebnzY0Qxv_wWHAqL8gs8ZAqu"></div>
+					</div>
+					<input type="submit" value="Register" class="btn btn-primary" />
+				</td>
+			</tr>
+		</form>
+	</table>
+</main>
+{% endblock %}
